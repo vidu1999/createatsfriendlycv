@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f6f3" />
+    <meta name="description" content="Build a clear, keyword-ready, ATS-friendly resume with CraftCV." />
+    <title>CraftCV — ATS-friendly resume builder</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <a class="brand" href="#" aria-label="CraftCV home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M9 5.5h9.4L24 11v15.5H9V5.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+              <path d="M18 5.8V11h5.2M12.5 17l2.4 2.5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <span class="brand-word">craft<span>cv</span></span>
+        </a>
+
+        <div class="workspace-picker">
+          <span class="workspace-symbol" aria-hidden="true">J</span>
+          <span class="workspace-name"><strong>My workspace</strong><small>Personal</small></span>
+          <svg class="picker-chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg>
+        </div>
+
+        <nav class="main-nav" aria-label="Workspace">
+          <p class="nav-caption">WORKSPACE</p>
+          <button class="nav-link is-active" type="button" data-mode="build" aria-current="page">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 3.8h8.3L19 8.5v11.7H6V3.8Z" /><path d="M14 4v5h4.8M9 13h7M9 16.5h7" /></svg>
+            </span>
+            <span>Resume studio</span>
+            <span class="nav-trailing">01</span>
+          </button>
+          <button class="nav-link" type="button" data-mode="match">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8" /><path d="m16 16 4.5 4.5M8 11h5.5M10.8 8.2v5.5" /></svg>
+            </span>
+            <span>Job match</span>
+            <span class="nav-new">SCAN</span>
+          </button>
+          <button class="nav-link" type="button" data-mode="import">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 3.8h8.3L19 8.5v11.7H6V3.8Z" /><path d="M14 4v5h4.8M9 13h7M9 16.5h4" /><path d="m12 11 0 4m-1.7-1.7L12 15l1.7-1.7" /></svg>
+            </span>
+            <span>Paste &amp; autofill</span>
+            <span class="nav-new">NEW</span>
+          </button>
+          <button class="nav-link nav-link-muted" type="button" data-action="show-tip">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M9.6 9a2.5 2.5 0 1 1 4.3 1.7c-1.1 1.1-1.9 1.3-1.9 3M12 17.3v.1" /></svg>
+            </span>
+            <span>ATS guide</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-spacer"></div>
+
+        <div class="sidebar-tip">
+          <span class="tip-spark" aria-hidden="true">✳</span>
+          <div>
+            <strong>Simple reads better.</strong>
+            <p>Clear headings and a single-column layout help your experience shine.</p>
+          </div>
+        </div>
+
+        <div class="sidebar-profile">
+          <span class="profile-avatar" aria-hidden="true">JT</span>
+          <span class="profile-copy"><strong>Personal workspace</strong><small>Saved on this device</small></span>
+          <span class="profile-menu" aria-hidden="true">···</span>
+        </div>
+      </aside>
+
+      <div class="main-shell">
+        <header class="topbar">
+          <div class="breadcrumbs"><span>Workspace</span><span class="crumb-slash">/</span><strong id="breadcrumbLabel">Resume studio</strong></div>
+          <div class="topbar-actions">
+            <div class="save-status" id="saveStatus" role="status"><span class="save-dot"></span><span>Saved locally</span></div>
+            <button class="button button-text" type="button" id="downloadTxtButton">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v9m0 0 3-3m-3 3L7 9M4 14v2.5h12V14" /></svg>
+              <span>Download TXT</span>
+            </button>
+            <button class="button button-primary top-export" type="button" id="printButton">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 7V3.5h9V7M5.5 14H4a1.5 1.5 0 0 1-1.5-1.5v-3A1.5 1.5 0 0 1 4 8h12a1.5 1.5 0 0 1 1.5 1.5v3A1.5 1.5 0 0 1 16 14h-1.5M5.5 11.5h9v5h-9v-5Z" /><path d="M14.2 10.5h.1" /></svg>
+              <span>Save as PDF</span>
+            </button>
+          </div>
+        </header>
+
+        <main class="main-content">
+          <section class="page-intro" aria-labelledby="pageTitle">
+            <div class="intro-copy">
+              <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR NEXT CHAPTER, WELL FORMATTED</div>
+              <h1 id="pageTitle">Build a resume that <span>gets noticed.</span></h1>
+              <p>A thoughtful, ATS-friendly resume starts with a clear story.</p>
+            </div>
+            <div class="document-controls">
+              <label for="resumeTitle">DOCUMENT NAME</label>
+              <div class="document-name-wrap">
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 3.5h6.8l3.2 3.2v9.8h-10v-13Z" /><path d="M12 3.8V7h3.2M8 10.5h5M8 13h5" /></svg>
+                <input id="resumeTitle" type="text" maxlength="80" value="Alex Morgan · Software Engineer" aria-label="Resume document name" />
+              </div>
+              <button class="fresh-button" id="startFreshButton" type="button">Start fresh <span aria-hidden="true">↗</span></button>
+            </div>
+          </section>
+
+          <div class="mode-tabs" role="tablist" aria-label="Resume tools">
+            <button class="mode-tab is-active" type="button" role="tab" aria-selected="true" data-mode="build">
+              <span class="mode-tab-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4.5 3.5h7l4 4v9h-11v-13Z" /><path d="M11.5 3.8v4h3.8M7.2 11h5.6M7.2 13.7h5.6" /></svg></span>
+              Build resume
+            </button>
+            <button class="mode-tab" type="button" role="tab" aria-selected="false" data-mode="import">
+              <span class="mode-tab-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4.5 3.5h7l4 4v9h-11v-13Z" /><path d="M11.5 3.8v4h3.8M10 9v5m-2-2 2 2 2-2" /></svg></span>
+              Paste &amp; autofill
+              <span class="tab-pill">SMART IMPORT</span>
+            </button>
+            <button class="mode-tab" type="button" role="tab" aria-selected="false" data-mode="match">
+              <span class="mode-tab-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><circle cx="8.7" cy="8.7" r="5.8" /><path d="m13 13 4 4M7 8.7h3.5M8.7 7v3.5" /></svg></span>
+              Match a job
+              <span class="tab-pill">FREE SCAN</span>
+            </button>
+          </div>
+
+          <div class="workspace-grid">
+            <section class="editor-column" aria-label="Resume editor">
+              <div class="build-view" id="buildView">
+                <div class="progress-card">
+                  <div class="progress-heading">
+                    <div><span class="small-label">YOUR PROGRESS</span><strong id="progressLabel">0 of 6 sections complete</strong></div>
+                    <span class="progress-percent" id="progressPercent">0%</span>
+                  </div>
+                  <div class="progress-track" aria-hidden="true"><span id="progressFill"></span></div>
+                  <nav class="section-nav" id="sectionNav" aria-label="Resume sections"></nav>
+                </div>
+                <div class="editor-card" id="editorCard"></div>
+              </div>
+              <div class="import-view" id="importView" hidden></div>
+              <div class="match-view" id="matchView" hidden></div>
+            </section>
+
+            <aside class="preview-column" aria-label="Resume preview">
+              <div class="preview-toolbar">
+                <div class="preview-title"><span class="preview-live-dot"></span><div><strong>Live preview</strong><small>ATS-friendly · single column</small></div></div>
+                <span class="paper-label">US LETTER</span>
+              </div>
+              <div class="paper-stage">
+                <article class="resume-paper" id="resumePaper" aria-label="Resume document preview"></article>
+              </div>
+              <div class="readiness-card" id="readinessCard"></div>
+              <p class="preview-disclaimer">Readiness is a content checklist, not a hiring or ATS guarantee.</p>
+            </aside>
+          </div>
+
+          <footer class="page-footer">
+            <span>Made for clear stories and real experience.</span>
+            <span>Your resume stays in this browser <span class="footer-lock" aria-hidden="true">◆</span></span>
+          </footer>
+        </main>
+      </div>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
